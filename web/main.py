@@ -1,7 +1,7 @@
-import os
+from os import getenv
 import logging
 
-logging.basicConfig(level=os.environ.get("LOG_LEVEL", logging.WARNING))
+logging.basicConfig(level=getenv("LOG_LEVEL", logging.WARNING))
 
 import uvloop
 from aiohttp import web
