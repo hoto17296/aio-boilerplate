@@ -6,13 +6,15 @@ services:
     build: web
     ports:
       - 8000:8000
+      - 8001:8001
     volumes:
       - ./web:/web
     environment:
       DATABASE_URL: postgres://postgres@db/
       REDIS_URL: redis://redis/
+      STATIC_ROOT_URL: http://localhost:8001/static/
       LOG_LEVEL: DEBUG
-    command: adev runserver
+    command: adev runserver --static='static'
 
   db:
     image: postgres:12
