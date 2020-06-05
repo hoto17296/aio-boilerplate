@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+
+  web:
+    build: web
+    ports:
+      - 8000:8000
+    volumes:
+      - ./web:/web
+    environment:
+      DATABASE_URL: postgres://postgres@db/
+      REDIS_URL: redis://redis/
+      LOG_LEVEL: DEBUG
+    command: adev runserver
+
+  db:
+    image: postgres:12
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+  redis:
+    image: redis:6
+    ports:
+      - 6379:6379
+    volumes:
+      - redis:/data
+
+volumes:
+  postgres:
+  redis:
