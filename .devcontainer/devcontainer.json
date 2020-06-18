@@ -1,0 +1,13 @@
+{
+  "name": "Existing Docker Compose (Extend)",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "docker-compose.yml"
+  ],
+  "service": "web",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "ms-python.python"
+  ],
+  "postCreateCommand": "pip install black"
+}

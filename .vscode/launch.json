@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: aiohttp",
+      "type": "python",
+      "request": "launch",
+      "module": "aiohttp_devtools",
+      "args": [
+        "runserver",
+        "--static=static"
+      ],
+      "cwd": "${workspaceRoot}/web"
+    }
+  ]
+}

@@ -3,6 +3,4 @@ aiohttp-jinja2
 aiohttp_session[aioredis]
 asyncpg
 uvloop
-oauthlib
 aiohttp-devtools
-black
